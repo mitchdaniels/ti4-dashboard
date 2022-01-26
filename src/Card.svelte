@@ -57,7 +57,7 @@
 		row-gap: 2px;
 	}
 	
-	.point-tracker .active, .point:hover {
+	.point-tracker .active, .point:hover ~ .point {
 		background-color: white;
 		box-shadow: 0px 0px 2px 0px white;
 	}
