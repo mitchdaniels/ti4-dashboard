@@ -2,7 +2,7 @@
 	import { createEventDispatcher } from 'svelte'
 	import { slide } from 'svelte/transition'
 	import { backInOut } from 'svelte/easing'
-	export let player, activePlayer
+	export let player, active
 	
 	let dispatch = createEventDispatcher();
 	
@@ -18,7 +18,7 @@
 	}
 </script>
 
-<div class="card" class:passed={player.passed} class:active={activePlayer}>
+<div class="card" class:passed={player.passed} class:active={active}>
 	<div class="header">
 			<div class="faction">
 				<div class="player-color" style="background: {player.color}"/>
@@ -29,7 +29,7 @@
 		</div>
 		<div class="strategy" class:used={player.strategicCompleted}>{player.strategy}</div>
 	</div>
-	{#if activePlayer}
+	{#if active}
 		<div class="actions" transition:slide={{ duration: 500, easing: backInOut }}>
 			{#if !player.passed}
 				{#if !player.strategicCompleted}

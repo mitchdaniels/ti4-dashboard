@@ -19,7 +19,9 @@
 </svelte:head>
 
 <style>
-	 @import url('https://fonts.googleapis.com/css2?family=Material+Icons');
+	
+	@import url('https://fonts.googleapis.com/css2?family=Urbanist:wght@200..900&display=swap');
+	@import url('https://fonts.googleapis.com/css2?family=Material+Icons');
 
 	:global(body) {
 		font-family: 'Urbanist', sans-serif;

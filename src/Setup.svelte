@@ -33,7 +33,7 @@
 					on:click={() => {
 					players.splice(i, 1)
 		players = players;}}>close</span>
-</div>
+	</div>
 {/each}
 <button on:click={() => { players = [...players, {faction: ''}]}}>
 	Add Player
@@ -43,6 +43,7 @@
 </button>
 
 <style>
+
 	.player-info {
 		display: flex;
 		align-items: center;
@@ -60,17 +61,6 @@
 		background-color: red;
 		border-radius: 12px
 	}
+
 </style>
-<!-- {#each Array(playerCount) as player, i}
-	<label>Player {i+1}
-		<input list="browsers" name="myBrowser" /></label>
-	<datalist id="browsers">
-		<option value="Emirates of Hacan">
-		<option value="Sardakk Norr">
-		<option value="Federation of Sol">
-		<option value="Universities of Jol-nar">
-		<option value="Xxcha Kingdom">
-		<option value="Barony of Letnev">
-	</datalist>
-{/each} -->
 
