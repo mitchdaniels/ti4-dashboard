@@ -29,15 +29,18 @@
 			{/each}
 		</div>
 		<input bind:value={player.faction} on:blur={ e => console.log(e.target.value)}/>
-		<span class="material-icons" 
-					on:click={() => {
-					players.splice(i, 1)
-		players = players;}}>close</span>
+		{#if i > 2}
+			<span class="material-icons" on:click={() => {players.splice(i, 1), players = players;}}>close</span>
+		{/if}
 	</div>
 {/each}
-<button on:click={() => { players = [...players, {faction: ''}]}}>
-	Add Player
-</button>
+
+{#if players.length <= 8}
+	<button on:click={() => { players = [...players, {faction: ''}]}}>
+		Add Player
+	</button>
+{/if}
+
 <button on:click={() => phase = "Strategy" }>
 	Start Game
 </button>
