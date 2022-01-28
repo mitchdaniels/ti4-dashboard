@@ -3,15 +3,16 @@
 	import StrategyPhase from './StrategyPhase.svelte'
 	import ActionPhase from './ActionPhase.svelte'
 	
-	export let phase = "Setup";
+	let players
+	export let phase = "Setup"
 </script>
 
 {#if phase === "Setup"}
-	<Setup bind:phase />
+	<Setup bind:phase bind:players/>
 {:else if phase === "Strategy"}
-	<StrategyPhase bind:phase />
+	<StrategyPhase bind:phase bind:players/>
 {:else if phase === "Action"}
-	<ActionPhase />
+	<ActionPhase bind:players/>
 {/if}
 
 <svelte:head>

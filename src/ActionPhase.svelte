@@ -2,9 +2,11 @@
 
 <script>	
 	import Card from './Card.svelte'
-	import players from './data.js'
+	// import players from './data.js'
 	import { flip } from 'svelte/animate'
 	import { backInOut } from 'svelte/easing'
+
+	export let players
 
 	let round = 0
 	let activePlayer
@@ -39,7 +41,7 @@
 <h1>Action Phase</h1>
 <h2>Round {round}</h2>
 <div class="faction-list">
-	{#each players as player, i (player.id)}
+	{#each players as player, i (player.seat)}
 		<div animate:flip={{ easing: backInOut }}>
 			<Card 
 				bind:player

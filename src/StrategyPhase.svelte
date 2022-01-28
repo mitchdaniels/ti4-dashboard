@@ -1,5 +1,5 @@
 <script>
-	export let phase;
+	export let phase, players
 </script>
 
 <p>

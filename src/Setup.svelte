@@ -1,17 +1,17 @@
 <script>
 	import { colors } from './data.js'
 	
-	let players = [
+	export let players = [
 		{
-			id: 1,
+			seat: 1,
 // 			faction: ''
 		},
 		{
-			id: 2,
+			seat: 2,
 // 			faction: ''
 		},
 		{
-			id: 3,
+			seat: 3,
 // 			faction: ''
 		}
 	]
@@ -21,27 +21,29 @@
 	export let phase;
 </script>
 
-{#each players as player, i}
-	<div class="player-info">
-		<div class="circle" style="background-color: {player.color}">
-			{#each colors as color}
-				<div class={color} value="Blue" />
-			{/each}
+<div class="player-list">
+	{#each players as player, i}
+		<div class="player-info">
+			<div class="circle" style="background-color: {player.color}">
+				{#each colors as color}
+					<div class={color} value="Blue" />
+				{/each}
+			</div>
+			<input bind:value={player.faction} on:blur={ e => console.log(e.target.value)}/>
+			{#if i > 2}
+				<span class="material-icons close" on:click={() => {players.splice(i, 1), players = players;}}>close</span>
+			{/if}
 		</div>
-		<input bind:value={player.faction} on:blur={ e => console.log(e.target.value)}/>
-		{#if i > 2}
-			<span class="material-icons" on:click={() => {players.splice(i, 1), players = players;}}>close</span>
-		{/if}
-	</div>
-{/each}
+	{/each}
+</div>
 
 {#if players.length <= 8}
-	<button on:click={() => { players = [...players, {faction: ''}]}}>
+	<button on:click={() => { players = [...players, {seat: players.length + 1, faction: ''}]}}>
 		Add Player
 	</button>
 {/if}
 
-<button on:click={() => phase = "Strategy" }>
+<button on:click={() => {phase = "Strategy", players.map((player, i) => player.seat = i + 1) }}>
 	Start Game
 </button>
 
@@ -63,6 +65,10 @@
 		height: 24px;
 		background-color: red;
 		border-radius: 12px
+	}
+
+	.close {
+		cursor:  pointer;
 	}
 
 </style>
