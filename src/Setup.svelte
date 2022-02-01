@@ -1,5 +1,5 @@
 <script>
-	import { colors } from './data.js'
+	import { colors, factions } from './data.js'
 	
 	export let players = [
 		{
@@ -16,7 +16,7 @@
 		}
 	]
 	
-	console.log(colors);
+	console.log(factions);
 	
 	export let phase;
 </script>
@@ -25,11 +25,16 @@
 	{#each players as player, i}
 		<div class="player-info">
 			<div class="circle" style="background-color: {player.color}">
-				{#each colors as color}
-					<div class={color} value="Blue" />
-				{/each}
+				<!-- {#each colors as color}
+					<div class={color} bind:value={player.color} value="Blue" />
+				{/each} -->
 			</div>
-			<input bind:value={player.faction} on:blur={ e => console.log(e.target.value)}/>
+			<input type="text" name="example" list="exampleList" bind:value={player.faction}>
+			<datalist id="exampleList">
+				{#each factions.base as faction}
+					<option value={faction}>  
+				{/each}
+			</datalist>
 			{#if i > 2}
 				<span class="material-icons close" on:click={() => {players.splice(i, 1), players = players;}}>close</span>
 			{/if}

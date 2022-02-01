@@ -4,7 +4,7 @@
 	import ActionPhase from './ActionPhase.svelte'
 	
 	let players
-	export let phase = "Setup"
+	export let phase = "Action"
 </script>
 
 {#if phase === "Setup"}

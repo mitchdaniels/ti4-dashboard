@@ -7,9 +7,25 @@ export const colors = [
 	'27AE60' // green
 ]
 
+export const factions = {
+	base: [
+		'Emirates of Hacan',
+		'Federation of Sol',
+		'Xxcha Kingdom',
+		'Universities of Jol-Nar',
+		'Sardakk N\'orr',
+		'Ghosts of Creuss',
+		'L1Z1X Mindset',
+		'Nekro Virus',
+		'Clan of Saar',
+		'Arborec',
+		'Barony of Letnev'
+	]
+}
+
 const players = [
 	{
-		id: 1,
+		seat: 1,
 		color: '#2D9CDB',
 		faction: 'Federation of Sol',
 		passed: false,
@@ -17,7 +33,7 @@ const players = [
 		points: 3
 	},
 	{
-		id: 2,
+		seat: 2,
 		color: '#BB6BD9',
 		faction: 'Barony of Letnev',
 		passed: false,
@@ -26,7 +42,7 @@ const players = [
 		points: 3
 	},
 	{
-		id: 3,
+		seat: 3,
 		color: '#000000',
 		faction: 'Sardakk N\'orr',
 		passed: false,
@@ -34,7 +50,7 @@ const players = [
 		points: 7
 	},
 	{
-		id: 4,
+		seat: 4,
 		color: '#F2C94C',
 		faction: 'Universities of Jol-Nar',
 		passed: false,
@@ -42,7 +58,7 @@ const players = [
 		points: 3
 	},
 	{
-		id: 5,
+		seat: 5,
 		color: '#EB5757',
 		faction: 'Emirates of Hacan',
 		passed: false,
@@ -50,7 +66,7 @@ const players = [
 		points: 5
 	},
   {
-		id: 6,
+		seat: 6,
 		color: '#27AE60',
 		faction: 'Xxcha Kingdom',
 		passed: false,

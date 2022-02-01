@@ -28,6 +28,14 @@
 				{/if}
 		</div>
 		<div class="strategy" class:used={player.strategicCompleted}>{player.strategy}</div>
+		{#if player.strategy = ''}
+			<select name="strategy" id="strategy-select" bind:value={player.strategy}>
+			  <option value="Leadership">Leadership</option>
+			  <option value="Politics">Politics</option>
+			  <option value="Diplomacy">Diplomacy</option>
+			  <option value="Trade">Trade</option>
+			</select>
+		{/if}
 	</div>
 	{#if active}
 		<div class="actions" transition:slide={{ duration: 500, easing: backInOut }}>
@@ -42,12 +50,12 @@
 			{/if}
 		</div>
 	{/if}
-	<div class="point-tracker">
+	<!-- <div class="point-tracker">
 		{#each Array(10) as e, i}
 			<div class="point" class:active="{i < player.points}" on:click={() => player.points = i + 1}>
 			</div>
 		{/each}
-	</div>
+	</div> -->
 </div>
 
 <style>

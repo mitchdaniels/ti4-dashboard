@@ -2,11 +2,14 @@
 
 <script>	
 	import Card from './Card.svelte'
-	// import players from './data.js'
+	import dummyPlayers from './data.js'
 	import { flip } from 'svelte/animate'
 	import { backInOut } from 'svelte/easing'
 
 	export let players
+
+	players = players ? players : dummyPlayers
+	console.log(players)
 
 	let round = 0
 	let activePlayer
