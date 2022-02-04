@@ -4,7 +4,7 @@
 	// import StrategyPhase from './StrategyPhase.svelte'
 	import ActionPhase from './ActionPhase.svelte'
 	
-	let players = [
+	export let players = [
 		{
 			seat: 1,
 // 			faction: ''
@@ -63,5 +63,9 @@
 		margin-block-start:  0px;
 		margin-block-end: 0px;
 	}
+
+	:global(*:focus) {
+    outline: none;
+}
 
 </style>

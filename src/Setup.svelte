@@ -14,8 +14,13 @@
 					<div class={color} bind:value={player.color} value="Blue" />
 				{/each} -->
 			</div>
-			<input type="text" name="example" list="exampleList" bind:value={player.faction}>
-			<datalist id="exampleList">
+			<input 
+				type="text"
+				name="faction"
+				list="factionList"
+				spellcheck=false
+				bind:value={player.faction}>
+			<datalist id="factionList">
 				{#each factions.base as faction}
 					<option value={faction}>  
 				{/each}
