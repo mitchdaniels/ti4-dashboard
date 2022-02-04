@@ -3,7 +3,7 @@
     export let text
     let pending = false
     import { Moon } from 'svelte-loading-spinners'
-    // import { slide } from 'svelte/transition'
+    // import { scale } from 'svelte/transition'
 
     function handleClick() {
         // if pend
@@ -13,12 +13,15 @@
 
 </script>
 
-<button on:click={() => pending = !pending} >
+<button on:click={() => pending = !pending}>
     {#if pending}
-        <Moon size="24" color="#ffffff" unit="px" duration="2s"></Moon> {text}
-    {:else}
-        {text}
+        <!-- <div transition:scale> -->
+            <Moon size="24" color="#ffffff" unit="px" duration="2s"></Moon>
+        <!-- </div> -->
+    <!-- {:else}
+        {text} -->
     {/if}
+    {text}
 </button>
 
 <style>
@@ -27,7 +30,9 @@
         flex-direction: row;
         align-items: center;
         gap: 16px;
+        height: 48px;
         font-size:  16px;
+        font-weight: 500;
         text-transform: uppercase;
         letter-spacing: 0.15em;
         padding:  12px 24px;

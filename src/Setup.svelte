@@ -1,4 +1,6 @@
 <script>
+  	// import ColorPicker from './ColorPicker.svelte';
+
 	import Button from './Button.svelte'
 	import { colors, factions } from './data.js'
 	
@@ -10,6 +12,7 @@
 	{#each players as player, i}
 		<div class="player-info">
 			<div class="circle" style="background-color: {player.color}">
+			<!-- <ColorPicker></ColorPicker> -->
 				<!-- {#each colors as color}
 					<div class={color} bind:value={player.color} value="Blue" />
 				{/each} -->
@@ -41,7 +44,8 @@
 <button on:click={() => {phase = "Strategy", players.map((player, i) => {player.seat = i + 1; player.strategy = ''}) }}>
 	Start Game
 </button>
-<Button text="Test Button"/>
+<!-- <ColorPicker></ColorPicker> -->
+<!-- <Button text="Test Button"/> -->
 
 <style>
 
@@ -56,16 +60,35 @@
 		margin-bottom: 0px;
 	}
 	
-	.circle {
+	/* .circle {
 		width: 24px;
 		height: 24px;
 		background-color: red;
 		border-radius: 12px
-	}
+	} */
 
 	.close {
 		cursor:  pointer;
 	}
+
+	button, .strategy {
+	font-size:  16px;
+	text-transform: uppercase;
+	letter-spacing: 0.15em;
+}
+
+button, input {
+	padding:  12px 24px;
+	border-radius:  8px;
+	background:  #3C4E59;
+	color:  #F7F9EE;
+	border:  none;
+	margin-right: 8px;
+}
+
+input::-webkit-calendar-picker-indicator {
+     opacity: 0;
+  }
 
 </style>
 
