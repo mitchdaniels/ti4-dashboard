@@ -61,7 +61,7 @@
 </div>
 
 <style>
-	.point-tracker {
+	/* .point-tracker {
 		display: flex;
 		flex-direction: column;
 		row-gap: 2px;
@@ -77,7 +77,7 @@
 		width: 8px;
 		border-radius: 1px;
 		background-color: #777;
-	}
+	} */
 	
 	.card {
 		padding: 24px 32px;

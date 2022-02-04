@@ -1,5 +1,5 @@
 <script>
-
+	import Button from './Button.svelte'
 	import { colors, factions } from './data.js'
 	
 	export let players, phase
@@ -41,6 +41,7 @@
 <button on:click={() => {phase = "Strategy", players.map((player, i) => {player.seat = i + 1; player.strategy = ''}) }}>
 	Start Game
 </button>
+<Button text="Test Button"/>
 
 <style>
 
