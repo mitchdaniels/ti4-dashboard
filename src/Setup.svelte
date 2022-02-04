@@ -1,24 +1,9 @@
 <script>
+
 	import { colors, factions } from './data.js'
 	
-	export let players = [
-		{
-			seat: 1,
-// 			faction: ''
-		},
-		{
-			seat: 2,
-// 			faction: ''
-		},
-		{
-			seat: 3,
-// 			faction: ''
-		}
-	]
-	
-	console.log(factions);
-	
-	export let phase;
+	export let players, phase
+
 </script>
 
 <div class="player-list">
@@ -48,7 +33,7 @@
 	</button>
 {/if}
 
-<button on:click={() => {phase = "Strategy", players.map((player, i) => player.seat = i + 1) }}>
+<button on:click={() => {phase = "Strategy", players.map((player, i) => {player.seat = i + 1; player.strategy = ''}) }}>
 	Start Game
 </button>
 

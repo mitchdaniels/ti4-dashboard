@@ -7,6 +7,17 @@ export const colors = [
 	'27AE60' // green
 ]
 
+export const strategies = [
+	'Leadership',
+	'Politics',
+	'Trade',
+	'Construction',
+	'Technology',
+	'Diplomacy',
+	'Warfare',
+	'Imperial'
+]
+
 export const factions = {
 	base: [
 		'Emirates of Hacan',

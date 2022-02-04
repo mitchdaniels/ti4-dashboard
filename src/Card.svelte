@@ -2,7 +2,8 @@
 	import { createEventDispatcher } from 'svelte'
 	import { slide } from 'svelte/transition'
 	import { backInOut } from 'svelte/easing'
-	export let player, active
+	import { strategies } from './data.js'
+	export let player, active, phase
 	
 	let dispatch = createEventDispatcher();
 	
@@ -21,23 +22,24 @@
 <div class="card" class:passed={player.passed} class:active={active}>
 	<div class="header">
 			<div class="faction">
-				<div class="player-color" style="background: {player.color}"/>
-				<div class="faction-name">{player.faction}</div>
+			<div class="player-color" style="background: {player.color}"/>
+			<div class="faction-name">{player.faction}</div>
 		  	{#if player.speaker}
 				<span class="material-icons" style="color: yellow">person</span>
-				{/if}
+			{/if}
 		</div>
-		<div class="strategy" class:used={player.strategicCompleted}>{player.strategy}</div>
-		{#if player.strategy = ''}
-			<select name="strategy" id="strategy-select" bind:value={player.strategy}>
-			  <option value="Leadership">Leadership</option>
-			  <option value="Politics">Politics</option>
-			  <option value="Diplomacy">Diplomacy</option>
-			  <option value="Trade">Trade</option>
+		{#if phase === "Action"}
+			<div class="strategy" class:used={player.strategicCompleted}>{player.strategy}</div>
+		{/if}
+		{#if phase === "Strategy"}
+			<select name="strategy" id="strategy-select" bind:value={player.strategy} class:used={player.strategicCompleted}>
+				{#each strategies as strategy}
+					<option value={strategy}>{strategy}</option>
+				{/each}
 			</select>
 		{/if}
 	</div>
-	{#if active}
+	{#if active && phase === "Action"}
 		<div class="actions" transition:slide={{ duration: 500, easing: backInOut }}>
 			{#if !player.passed}
 				{#if !player.strategicCompleted}
@@ -50,7 +52,7 @@
 			{/if}
 		</div>
 	{/if}
-	<!-- <div class="point-tracker">
+<!-- 	<div class="point-tracker">
 		{#each Array(10) as e, i}
 			<div class="point" class:active="{i < player.points}" on:click={() => player.points = i + 1}>
 			</div>
@@ -129,13 +131,13 @@
 	transition: opacity 0.5s;
 }
 
-button, .strategy {
+button, .strategy, select {
 	font-size:  16px;
 	text-transform: uppercase;
 	letter-spacing: 0.15em;
 }
 
-button {
+button, select {
 	padding:  12px 24px;
 	border-radius:  8px;
 	background:  #3C4E59;

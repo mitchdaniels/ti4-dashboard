@@ -1,17 +1,33 @@
 <script>
+
 	import Setup from './Setup.svelte'
-	import StrategyPhase from './StrategyPhase.svelte'
+	// import StrategyPhase from './StrategyPhase.svelte'
 	import ActionPhase from './ActionPhase.svelte'
 	
-	let players
-	export let phase = "Action"
+	let players = [
+		{
+			seat: 1,
+// 			faction: ''
+		},
+		{
+			seat: 2,
+// 			faction: ''
+		},
+		{
+			seat: 3,
+// 			faction: ''
+		}
+	]
+
+	$: console.log(players)
+
+	export let phase = "Setup"
+
 </script>
 
 {#if phase === "Setup"}
 	<Setup bind:phase bind:players/>
-{:else if phase === "Strategy"}
-	<StrategyPhase bind:phase bind:players/>
-{:else if phase === "Action"}
+{:else}
 	<ActionPhase bind:players/>
 {/if}
 
