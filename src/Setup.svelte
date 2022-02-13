@@ -1,5 +1,5 @@
 <script>
-  	// import ColorPicker from './ColorPicker.svelte';
+  	import ColorPicker from './ColorPicker.svelte';
 
 	import Button from './Button.svelte'
 	import { colors, factions } from './data.js'
@@ -11,12 +11,9 @@
 <div class="player-list">
 	{#each players as player, i}
 		<div class="player-info">
-			<div class="circle" style="background-color: {player.color}">
-			<!-- <ColorPicker></ColorPicker> -->
-				<!-- {#each colors as color}
-					<div class={color} bind:value={player.color} value="Blue" />
-				{/each} -->
-			</div>
+			<!-- <div class="circle" style="background-color: {player.color}"> -->
+			<ColorPicker bind:color={player.color}></ColorPicker>
+			<!-- </div>  -->
 			<input 
 				type="text"
 				name="faction"
@@ -35,10 +32,12 @@
 	{/each}
 </div>
 
-{#if players.length <= 8}
+{#if players.length <= 7}
 	<button on:click={() => { players = [...players, {seat: players.length + 1, faction: ''}]}}>
 		Add Player
 	</button>
+{:else }
+	8 players max
 {/if}
 
 <button on:click={() => {phase = "Strategy", players.map((player, i) => {player.seat = i + 1; player.strategy = ''}) }}>
