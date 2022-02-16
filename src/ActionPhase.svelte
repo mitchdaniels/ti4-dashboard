@@ -22,16 +22,12 @@
 		phase = "Strategy"
 		++round
 	}
-
-	const sortByStrategy = (players) => {
-		return players;
-	}
 		
 	const advancePlayer = () => {
 		let remaining = players.filter(player => player.passed === false)
 		let index = remaining.findIndex(player => player === activePlayer)
 		activePlayer = remaining[ ++index % remaining.length ]
-		console.log(players, activePlayer)
+		players.sort((a, b) => a.seat )
 		players.sort((a, b) => a.passed - b.passed)
 	}
 	

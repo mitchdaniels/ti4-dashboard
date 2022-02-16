@@ -3,6 +3,7 @@
 	import { slide } from 'svelte/transition'
 	import { backInOut } from 'svelte/easing'
 	import { strategies } from './data.js'
+	import Button from './Button.svelte'
 	export let player, active, phase
 	
 	let dispatch = createEventDispatcher();
@@ -52,6 +53,8 @@
 			{/if}
 		</div>
 	{/if}
+	<!-- <Button text="Strategic" pend=true/>
+	<Button text="Tactical" pend=true/> -->
 	<!-- <div class="point-tracker">
 		{#each Array(10) as e, i}
 			<div class="point" class:active="{i+1 > player.points}" on:click={() => player.points = i + 1}>

@@ -16,6 +16,14 @@
 		{
 			seat: 3,
 // 			faction: ''
+		},
+		{
+			seat: 4,
+// 			faction: ''
+		},
+		{
+			seat: 5,
+// 			faction: ''
 		}
 	]
 

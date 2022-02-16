@@ -25,7 +25,7 @@
 					<option value={faction}>  
 				{/each}
 			</datalist>
-			{#if i > 2}
+			{#if i > 4}
 				<span class="material-icons close" on:click={() => {players.splice(i, 1), players = players;}}>close</span>
 			{/if}
 		</div>
@@ -70,7 +70,7 @@
 		cursor:  pointer;
 	}
 
-	button, .strategy {
+	button {
 	font-size:  16px;
 	text-transform: uppercase;
 	letter-spacing: 0.15em;

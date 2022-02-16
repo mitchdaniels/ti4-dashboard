@@ -8,7 +8,7 @@
 
 </script>
 
-<div class="circle colorPicker" style:background-color={color} on:click={() => open = !open} />
+<div class="circle" style:background-color={color} on:click={() => open = !open} />
 {#if open}
     {#each colors as option}
         <div class="circle" style:background-color={option} on:click={() => {color = option; open = false}}/>

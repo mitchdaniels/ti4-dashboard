@@ -1,25 +1,28 @@
 <script>
 
     export let text
-    let pending = false
+    export let pend = false
     import { Moon } from 'svelte-loading-spinners'
-    // import { scale } from 'svelte/transition'
+
+    let pending = false
 
     function handleClick() {
-        // if pend
+        console.log(pend, pending)
+        if (pend && !pending) {
+            pending = true
+        }
+        else {
+            // dispatchAction
+        }
         // change state to pending
         // if click outside while pending, cancel pending
     }
 
 </script>
 
-<button on:click={() => pending = !pending}>
+<button on:click={handleClick}>
     {#if pending}
-        <!-- <div transition:scale> -->
-            <Moon size="24" color="#ffffff" unit="px" duration="2s"></Moon>
-        <!-- </div> -->
-    <!-- {:else}
-        {text} -->
+        <Moon size="24" color="#ffffff" unit="px" duration="2s"></Moon>
     {/if}
     {text}
 </button>
