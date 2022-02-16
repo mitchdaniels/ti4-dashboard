@@ -20,17 +20,23 @@ export const strategies = [
 
 export const factions = {
 	base: [
+		'Arborec',
+		'Barony of Letnev',
+		'Clan of Saar',
+		'Embers of Muaat',
 		'Emirates of Hacan',
 		'Federation of Sol',
-		'Xxcha Kingdom',
-		'Universities of Jol-Nar',
-		'Sardakk N\'orr',
 		'Ghosts of Creuss',
-		'L1Z1X Mindset',
+		'L1Z1X Mindnet',
+		'Mentak Coalition',
+		'Naalu Collective',
 		'Nekro Virus',
-		'Clan of Saar',
-		'Arborec',
-		'Barony of Letnev'
+		'Sardakk N\'orr',
+		'Universities of Jol-Nar',
+		'Winnu',
+		'Xxcha Kingdom',
+		'Yin Brotherhood',
+		'Yssaril Tribes'
 	]
 }
 

@@ -41,6 +41,12 @@
 	}
 
 	const strategySort = (a, b) => {
+		if ( a.faction === "Naalu Collective" ) {
+			return -1;
+		}
+		if ( b.faction === "Naalu Collective" ) {
+			return 1;
+		}
 		if ( strategies.indexOf(a.strategy) < strategies.indexOf(b.strategy) ){
 			return -1;
 		}
