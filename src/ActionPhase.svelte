@@ -1,24 +1,31 @@
 <script>	
 	import Card from './Card.svelte'
-	// import dummyPlayers from './data.js'
+	import { strategies } from './data.js'
 	import { flip } from 'svelte/animate'
 	import { backInOut } from 'svelte/easing'
 
 	export let players
 
-	let round = 1
+	let round = 0
 	let activePlayer
 	let phase = "Strategy"
 
 	const newRound = () => {
-		++round
 		players.sort((a, b) => a.seat - b.seat)
 		activePlayer = players[0]
 
 		players.map(function(player) {
 			player.passed = false
 			player.strategicCompleted = false
+			player.strategy = ''
 		})
+
+		phase = "Strategy"
+		++round
+	}
+
+	const sortByStrategy = (players) => {
+		return players;
 	}
 		
 	const advancePlayer = () => {
@@ -32,6 +39,21 @@
 	$: if (players.every(player => player.passed === true)) {
 		newRound()
 	}
+
+	const strategySort = (a, b) => {
+		if ( strategies.indexOf(a.strategy) < strategies.indexOf(b.strategy) ){
+			return -1;
+		}
+		if ( strategies.indexOf(a.strategy) > strategies.indexOf(b.strategy) ){
+			return 1;
+		}
+		return 0;
+	}
+
+	// Sort by strategy when phase becomes Action
+	$: if (phase === "Action") {
+		players.sort(strategySort)
+	}
 	
 	newRound()
 
@@ -41,7 +63,7 @@
 <h2>Round {round}</h2>
 <div class="faction-list">
 	{#each players as player, i (player.seat)}
-		<div animate:flip={{ easing: backInOut }}>
+		<div animate:flip={{ easing: backInOut, duration: 750 }}>
 			<Card 
 				bind:player
 				{phase}

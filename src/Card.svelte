@@ -52,9 +52,9 @@
 			{/if}
 		</div>
 	{/if}
-<!-- 	<div class="point-tracker">
+	<!-- <div class="point-tracker">
 		{#each Array(10) as e, i}
-			<div class="point" class:active="{i < player.points}" on:click={() => player.points = i + 1}>
+			<div class="point" class:active="{i+1 > player.points}" on:click={() => player.points = i + 1}>
 			</div>
 		{/each}
 	</div> -->
@@ -63,19 +63,24 @@
 <style>
 	/* .point-tracker {
 		display: flex;
-		flex-direction: column;
-		row-gap: 2px;
+		flex-direction: row-reverse;
+		column-gap: 4px;
+		margin-left: 40px;
+	}
+
+	.point-tracker:hover .point {
+		background-color: #777;
 	}
 	
-	.point-tracker .active, .point:hover ~ .point {
+	.point-tracker .active, .point-tracker .point:hover, .point:hover ~ .point {
 		background-color: white;
 		box-shadow: 0px 0px 2px 0px white;
 	}
 	
 	.point {
-		height: 4px;
-		width: 8px;
-		border-radius: 1px;
+		height: 12px;
+		width: 12px;
+		border-radius: 2px;
 		background-color: #777;
 	} */
 	

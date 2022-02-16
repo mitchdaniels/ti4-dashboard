@@ -9,12 +9,12 @@ export const colors = [
 
 export const strategies = [
 	'Leadership',
-	'Politics',
-	'Trade',
-	'Construction',
-	'Technology',
 	'Diplomacy',
+	'Politics',
+	'Construction',
+	'Trade',
 	'Warfare',
+	'Technology',
 	'Imperial'
 ]
 
