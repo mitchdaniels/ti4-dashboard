@@ -12,7 +12,6 @@
 
 	const newRound = () => {
 		players.sort((a, b) => a.seat - b.seat)
-		activePlayer = players[0]
 
 		players.map(function(player) {
 			player.passed = false
@@ -32,6 +31,7 @@
 		let remaining = players.filter(player => player.passed === false)
 		let index = remaining.findIndex(player => player === activePlayer)
 		activePlayer = remaining[ ++index % remaining.length ]
+		console.log(players, activePlayer)
 		players.sort((a, b) => a.passed - b.passed)
 	}
 	
@@ -56,9 +56,10 @@
 		return 0;
 	}
 
-	// Sort by strategy when phase becomes Action
-	$: if (phase === "Action") {
+	function startActionPhase() {
+		phase = "Action"
 		players.sort(strategySort)
+		activePlayer = players[0]
 	}
 	
 	newRound()
@@ -80,7 +81,7 @@
 	{/each}
 </div>
 {#if phase === "Strategy" && players.every(player => player.strategy)}
-	<button on:click={() => phase = "Action"}>Action Phase</button>
+	<button on:click={startActionPhase}>Action Phase</button>
 {/if}
 
 <style>	
