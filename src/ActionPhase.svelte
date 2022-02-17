@@ -26,8 +26,11 @@
 	const advancePlayer = () => {
 		let remaining = players.filter(player => player.passed === false)
 		let index = remaining.findIndex(player => player === activePlayer)
+
+		// Move active player to end of remaining players
+		players.splice(remaining.length - 1, 0, players.splice(index, 1)[0]);
+
 		activePlayer = remaining[ ++index % remaining.length ]
-		players.sort((a, b) => a.seat )
 		players.sort((a, b) => a.passed - b.passed)
 	}
 	
