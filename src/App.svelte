@@ -27,9 +27,7 @@
 		}
 	]
 
-	$: console.log(players)
-
-	export let phase = "Action"
+	export let phase = "Setup"
 
 </script>
 
