@@ -63,7 +63,6 @@
 	}
 	
 	newRound()
-	startActionPhase()
 
 </script>
 
