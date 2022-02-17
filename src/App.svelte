@@ -29,7 +29,7 @@
 
 	$: console.log(players)
 
-	export let phase = "Setup"
+	export let phase = "Action"
 
 </script>
 

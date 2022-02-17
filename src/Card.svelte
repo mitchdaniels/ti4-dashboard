@@ -1,7 +1,7 @@
 <script>
 	import { createEventDispatcher } from 'svelte'
 	import { slide } from 'svelte/transition'
-	import { backInOut } from 'svelte/easing'
+	import { quintInOut } from 'svelte/easing'
 	import { strategies } from './data.js'
 	import Button from './Button.svelte'
 	export let player, active, phase
@@ -20,7 +20,7 @@
 	}
 </script>
 
-<div class="card" class:passed={player.passed} class:active={active}>
+<div class="card" class:passed={player.passed} class:active>
 	<div class="header">
 			<div class="faction">
 			<div class="player-color" style="background: {player.color}"/>
@@ -41,7 +41,7 @@
 		{/if}
 	</div>
 	{#if active && phase === "Action"}
-		<div class="actions" transition:slide={{ duration: 500, easing: backInOut }}>
+		<div class="actions" in:slide={{ duration: 500, easing: quintInOut, delay: 300 }} > 
 			{#if !player.passed}
 				{#if !player.strategicCompleted}
 					<button on:click={() => handleAction('strategic')}>Strategy</button>
@@ -95,8 +95,7 @@
 		display: inline-flex;
 		flex-direction: column;
 		justify-content: space-between;
-		transition: background-color 0.5s;
-		transition: opacity 2s;
+		transition: 0.5s 0.5s;
 	}
 	
 	.header {
@@ -136,7 +135,7 @@
 
 .used, .passed {
 	opacity: 20%;
-	transition: opacity 0.5s;
+	/* transition: 0.5s 0.5s; */
 }
 
 button, .strategy, select {

@@ -2,9 +2,10 @@
 	import Card from './Card.svelte'
 	import { strategies } from './data.js'
 	import { flip } from 'svelte/animate'
-	import { backInOut } from 'svelte/easing'
+	import { quintInOut } from 'svelte/easing'
 
-	export let players
+	// export let players
+	import players from './data.js'
 
 	let round = 0
 	let activePlayer
@@ -62,6 +63,7 @@
 	}
 	
 	newRound()
+	startActionPhase()
 
 </script>
 
@@ -69,14 +71,14 @@
 <h2>Round {round}</h2>
 <div class="faction-list">
 	{#each players as player, i (player.seat)}
-		<div animate:flip={{ easing: backInOut, duration: 750 }}>
+		<div class="animate" animate:flip={{ easing: quintInOut, duration: 1250 }} >
 			<Card 
 				bind:player
 				{phase}
 				active={player === activePlayer}
 				on:action={advancePlayer}
 			/>
-	</div>
+		</div> 
 	{/each}
 </div>
 {#if phase === "Strategy" && players.every(player => player.strategy)}
