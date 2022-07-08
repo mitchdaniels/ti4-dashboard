@@ -4,12 +4,12 @@
 	import { flip } from 'svelte/animate'
 	import { quintInOut } from 'svelte/easing'
 
-	export let players
-	// import players from './data.js'
+	//export let players
+	import players from './data.js'
 
 	let round = 0
 	let activePlayer
-	let phase = "Strategy"
+	let phase = "Action"
 
 	const newRound = () => {
 		players.sort((a, b) => a.seat - b.seat)

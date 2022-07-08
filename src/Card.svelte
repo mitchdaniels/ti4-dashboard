@@ -88,10 +88,10 @@
 	} */
 	
 	.card {
-		padding: 24px 32px;
+		padding: 2em 2.5em;
 		background: #273238;
-		border-radius: 8px;
-		margin-bottom: 8px;
+		border-radius: 0.5em;
+		margin-bottom: 0.5em;
 		display: inline-flex;
 		flex-direction: column;
 		justify-content: space-between;
@@ -153,7 +153,7 @@ button, select {
 	margin-right: 8px;
 }
 
-button:hover {
+button:hover, select:hover {
 	background: #3d5E69;
 	cursor: pointer;
 }

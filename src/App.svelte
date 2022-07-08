@@ -6,24 +6,15 @@
 	
 	export let players = [
 		{
-			seat: 1,
-// 			faction: ''
-		},
+			seat: 1		},
 		{
-			seat: 2,
-// 			faction: ''
-		},
+			seat: 2		},
 		{
-			seat: 3,
-// 			faction: ''
-		},
+			seat: 3		},
 		{
-			seat: 4,
-// 			faction: ''
-		},
+			seat: 4		},
 		{
 			seat: 5,
-// 			faction: ''
 		}
 	]
 
@@ -72,6 +63,26 @@
 
 	:global(*:focus) {
     outline: none;
-}
+	}
+
+	:global(button, .strategy, select) {
+		font-size:  16px;
+		text-transform: uppercase;
+		letter-spacing: 0.15em;
+	}
+
+	:global(button, select) {
+		padding:  12px 24px;
+		border-radius:  8px;
+		background:  #3C4E59;
+		color:  #F7F9EE;
+		border:  none;
+		margin-right: 8px;
+	}
+
+	:global(button:hover) {
+		background: #3d5E69;
+		cursor: pointer;
+	}
 
 </style>
