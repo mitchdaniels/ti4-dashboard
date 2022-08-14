@@ -18,7 +18,7 @@
 		}
 	]
 
-	export let phase;
+	export let phase = "Setup";
 
 </script>
 

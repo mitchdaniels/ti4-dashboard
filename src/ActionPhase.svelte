@@ -4,10 +4,8 @@
 	import { flip } from 'svelte/animate'
 	import { quintInOut } from 'svelte/easing'	
 
-	// export let players
-	import testPlayers from './data.js'
-
-	let players = testPlayers;
+	export let players
+	// import testPlayers from './data.js'
 
 	let round = 0
 	let activePlayer
@@ -28,21 +26,18 @@
 		
 	const advancePlayer = () => {
 
-		// players.sort(strategySort)
-
 		let remaining = players.filter(player => player.passed === false)
 		let passed = players.filter(player => player.passed === true)
-		// let index = remaining.findIndex(player => player === activePlayer)
 
 		// shift current active player to end and update activePlayer
 
+		// Move active player to end of remaining players
 		if (!activePlayer.passed) {
 			remaining.push(remaining.shift())
 		}
 	
 		activePlayer = remaining[0]
 
-		// Move active player to end of remaining players
 		players = remaining.concat(passed)
 
 	}
