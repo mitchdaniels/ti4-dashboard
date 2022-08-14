@@ -18,7 +18,7 @@
 		}
 	]
 
-	export let phase = "Setup"
+	export let phase;
 
 </script>
 
@@ -29,7 +29,7 @@
 {/if}
 
 <svelte:head>
-	<title>TI4 Dashboard</title>
+	<title>TI4 Dashboard Example</title>
 	<style>
 		@import url('https://fonts.googleapis.com/css2?family=Urbanist:wght@200..900&display=swap');
 		@import url('https://fonts.googleapis.com/css2?family=Material+Icons');
@@ -76,7 +76,7 @@
 		border-radius:  8px;
 		background:  #3C4E59;
 		color:  #F7F9EE;
-		border:  none;
+		border:  none;	
 		margin-right: 8px;
 	}
 

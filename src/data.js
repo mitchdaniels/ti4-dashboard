@@ -85,7 +85,7 @@ const players = [
   {
 		seat: 6,
 		color: '#27AE60',
-		faction: 'Xxcha Kingdom',
+		faction: 'Naalu Collective',
 		passed: false,
 		strategy: 'Trade',
 		points: 4

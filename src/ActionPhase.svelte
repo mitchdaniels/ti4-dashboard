@@ -2,14 +2,16 @@
 	import Card from './Card.svelte'
 	import { strategies } from './data.js'
 	import { flip } from 'svelte/animate'
-	import { quintInOut } from 'svelte/easing'
+	import { quintInOut } from 'svelte/easing'	
 
-	//export let players
-	import players from './data.js'
+	// export let players
+	import testPlayers from './data.js'
+
+	let players = testPlayers;
 
 	let round = 0
 	let activePlayer
-	let phase = "Action"
+	let phase = "Strategy"
 
 	const newRound = () => {
 		players.sort((a, b) => a.seat - b.seat)
@@ -25,14 +27,24 @@
 	}
 		
 	const advancePlayer = () => {
+
+		// players.sort(strategySort)
+
 		let remaining = players.filter(player => player.passed === false)
-		let index = remaining.findIndex(player => player === activePlayer)
+		let passed = players.filter(player => player.passed === true)
+		// let index = remaining.findIndex(player => player === activePlayer)
+
+		// shift current active player to end and update activePlayer
+
+		if (!activePlayer.passed) {
+			remaining.push(remaining.shift())
+		}
+	
+		activePlayer = remaining[0]
 
 		// Move active player to end of remaining players
-		players.splice(remaining.length - 1, 0, players.splice(index, 1)[0]);
+		players = remaining.concat(passed)
 
-		activePlayer = remaining[ ++index % remaining.length ]
-		players.sort((a, b) => a.passed - b.passed)
 	}
 	
 	// Start new round if all players passed
@@ -41,6 +53,12 @@
 	}
 
 	const strategySort = (a, b) => {
+		if (a.passed < b.passed) {
+			return -1;
+		}
+		if (a.passed > b.passed) {
+			return 1;
+		}
 		if ( a.faction === "Naalu Collective" ) {
 			return -1;
 		}

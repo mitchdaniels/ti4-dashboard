@@ -53,39 +53,9 @@
 			{/if}
 		</div>
 	{/if}
-	<!-- <Button text="Strategic" pend=true/>
-	<Button text="Tactical" pend=true/> -->
-	<!-- <div class="point-tracker">
-		{#each Array(10) as e, i}
-			<div class="point" class:active="{i+1 > player.points}" on:click={() => player.points = i + 1}>
-			</div>
-		{/each}
-	</div> -->
 </div>
 
 <style>
-	/* .point-tracker {
-		display: flex;
-		flex-direction: row-reverse;
-		column-gap: 4px;
-		margin-left: 40px;
-	}
-
-	.point-tracker:hover .point {
-		background-color: #777;
-	}
-	
-	.point-tracker .active, .point-tracker .point:hover, .point:hover ~ .point {
-		background-color: white;
-		box-shadow: 0px 0px 2px 0px white;
-	}
-	
-	.point {
-		height: 12px;
-		width: 12px;
-		border-radius: 2px;
-		background-color: #777;
-	} */
 	
 	.card {
 		padding: 2em 2.5em;
@@ -136,25 +106,5 @@
 .used, .passed {
 	opacity: 20%;
 	/* transition: 0.5s 0.5s; */
-}
-
-button, .strategy, select {
-	font-size:  16px;
-	text-transform: uppercase;
-	letter-spacing: 0.15em;
-}
-
-button, select {
-	padding:  12px 24px;
-	border-radius:  8px;
-	background:  #3C4E59;
-	color:  #F7F9EE;
-	border:  none;
-	margin-right: 8px;
-}
-
-button:hover, select:hover {
-	background: #3d5E69;
-	cursor: pointer;
 }
 </style>

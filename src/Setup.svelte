@@ -11,9 +11,7 @@
 <div class="player-list">
 	{#each players as player, i}
 		<div class="player-info">
-			<!-- <div class="circle" style="background-color: {player.color}"> -->
 			<ColorPicker bind:color={player.color}></ColorPicker>
-			<!-- </div>  -->
 			<input 
 				type="text"
 				name="faction"
@@ -43,8 +41,6 @@
 <button on:click={() => {phase = "Strategy", players.map((player, i) => {player.seat = i + 1; player.strategy = ''}) }}>
 	Start Game
 </button>
-<!-- <ColorPicker></ColorPicker> -->
-<!-- <Button text="Test Button"/> -->
 
 <style>
 
@@ -58,36 +54,29 @@
 	.player-info input {
 		margin-bottom: 0px;
 	}
-	
-	/* .circle {
-		width: 24px;
-		height: 24px;
-		background-color: red;
-		border-radius: 12px
-	} */
 
 	.close {
 		cursor:  pointer;
 	}
 
 	button {
-	font-size:  16px;
-	text-transform: uppercase;
-	letter-spacing: 0.15em;
-}
+		font-size:  16px;
+		text-transform: uppercase;
+		letter-spacing: 0.15em;
+	}
 
-button, input {
-	padding:  12px 24px;
-	border-radius:  8px;
-	background:  #3C4E59;
-	color:  #F7F9EE;
-	border:  none;
-	margin-right: 8px;
-}
+	button, input {
+		padding:  12px 24px;
+		border-radius:  8px;
+		background:  #3C4E59;
+		color:  #F7F9EE;
+		border:  none;
+		margin-right: 8px;
+	}
 
-input::-webkit-calendar-picker-indicator {
-     opacity: 0;
-  }
+	input::-webkit-calendar-picker-indicator {
+		opacity: 0;
+	}
 
 </style>
 
