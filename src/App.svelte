@@ -18,7 +18,7 @@
 		}
 	]
 
-	export let phase = "Setup";
+	export let phase = "Action";
 
 </script>
 
@@ -40,15 +40,15 @@
 
 	:global(body) {
 		font-family: 'Urbanist', sans-serif;
-		background: #1E1F21;
-		color:  #F7F9EE;
+		background: hsl(220, 20%, 10%);
+		color:  hsl(70, 50%, 95%);
 		text-align: center;
 	}
 	
 	:global(h1) {
 		text-transform: uppercase;
-		letter-spacing: 1em;
-		text-indent: 0.5em;
+		letter-spacing: 1rem;
+		text-indent: 0.5rem;
 		margin:  80px 0px 40px 0px;
 	}
 
@@ -68,13 +68,13 @@
 	:global(button, .strategy, select) {
 		font-size:  16px;
 		text-transform: uppercase;
-		letter-spacing: 0.15em;
+		letter-spacing: 0.15rem;
 	}
 
 	:global(button, select) {
 		padding:  12px 24px;
 		border-radius:  8px;
-		background:  #3C4E59;
+		background:  hsl(220, 19%, 35%);
 		color:  #F7F9EE;
 		border:  none;	
 		margin-right: 8px;

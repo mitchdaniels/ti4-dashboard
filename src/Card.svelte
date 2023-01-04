@@ -58,10 +58,10 @@
 <style>
 	
 	.card {
-		padding: 2em 2.5em;
-		background: #273238;
-		border-radius: 0.5em;
-		margin-bottom: 0.5em;
+		padding: 2rem 2.5rem;
+		background: hsl(220, 18%, 19%);
+		border-radius: 0.5rem;
+		margin-bottom: 0.5rem;
 		display: inline-flex;
 		flex-direction: column;
 		justify-content: space-between;
@@ -75,7 +75,7 @@
 	}
 	
 	.active {
-		background: #354550;
+		background: hsl(220, 20%, 26%);
 	}
 	
  	.faction {
