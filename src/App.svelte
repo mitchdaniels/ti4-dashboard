@@ -40,8 +40,8 @@
 
 	:global(body) {
 		font-family: 'Urbanist', sans-serif;
-		background: hsl(220, 20%, 10%);
-		color:  hsl(70, 50%, 95%);
+		background: hsl(0, 0%, 100%);
+		color:  hsl(0, 0%, 20%);
 		text-align: center;
 	}
 	
@@ -74,19 +74,14 @@
 	:global(button, select) {
 		padding:  12px 24px;
 		border-radius:  8px;
-		background:  hsl(220, 19%, 35%);
-		color:  #F7F9EE;
+		background:  hsl(210, 40%, 20%);
+		color:  hsl(210, 40%, 95%);
 		border:  none;	
 		margin-right: 8px;
 	}
 
-	:global(button:hover) {
-		background: #3d5E69;
-		cursor: pointer;
-	}
-
-	:global(select:hover) {
-		background: hsl(220, 19%, 40%);
+	:global(button:hover, select:hover) {
+		background: hsl(210, 40%, 30%);
 		cursor: pointer;
 	}
 

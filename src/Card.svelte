@@ -20,10 +20,12 @@
 	}
 </script>
 
-<div class="card" class:passed={player.passed} class:active>
+<div class="card" class:passed={player.passed} class:active style:border-left={active ? "8px solid " + player.color : "none"}>
 	<div class="header">
 			<div class="faction">
-			<div class="player-color" style="background: {player.color}"/>
+			{#if !active}
+				<div class="player-color" style="background: {player.color}"/>
+			{/if}
 			<div class="faction-name">{player.faction}</div>
 		  	{#if player.speaker}
 				<span class="material-icons" style="color: yellow">person</span>
@@ -59,7 +61,7 @@
 	
 	.card {
 		padding: 2rem 2.5rem;
-		background: hsl(220, 18%, 19%);
+		background: hsl(220deg, 10%, 95%);
 		border-radius: 0.5rem;
 		margin-bottom: 0.5rem;
 		display: inline-flex;
@@ -75,7 +77,8 @@
 	}
 	
 	.active {
-		background: hsl(220, 20%, 26%);
+		background: hsl(220deg, 10%, 92%);
+		border-radius: 0 0.5rem 0.5rem 0;
 	}
 	
  	.faction {
@@ -90,21 +93,21 @@
 		border-radius: 8px;
 	}
 	
-.actions {
-	margin-top:  16px;
-	margin-left:  48px;
-	display: flex;
-	justify-content: safe left;
-}
+	.actions {
+		margin-top:  16px;
+		margin-left:  48px;
+		display: flex;
+		justify-content: safe left;
+	}
 
-.faction-name {
-	font-weight: 500;
-	padding-left: 32px;
-	font-size: 32px;
-}
+	.faction-name {
+		font-weight: 500;
+		padding-left: 32px;
+		font-size: 32px;
+	}
 
-.used, .passed {
-	opacity: 20%;
-	/* transition: 0.5s 0.5s; */
-}
+	.used, .passed {
+		opacity: 20%;
+		/* transition: 0.5s 0.5s; */
+	}
 </style>
