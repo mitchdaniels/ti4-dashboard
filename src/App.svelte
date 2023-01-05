@@ -18,7 +18,7 @@
 		}
 	]
 
-	export let phase = "Action";
+	export let phase = "Setup";
 
 </script>
 
@@ -82,6 +82,11 @@
 
 	:global(button:hover) {
 		background: #3d5E69;
+		cursor: pointer;
+	}
+
+	:global(select:hover) {
+		background: hsl(220, 19%, 40%);
 		cursor: pointer;
 	}
 
