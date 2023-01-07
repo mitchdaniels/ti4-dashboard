@@ -92,15 +92,25 @@
 			/>
 		</div> 
 	{/each}
+	{#if phase === "Strategy" && players.every(player => player.strategy)}
+		<button on:click={startActionPhase}>Action Phase</button>
+	{/if}
 </div>
-{#if phase === "Strategy" && players.every(player => player.strategy)}
-	<button on:click={startActionPhase}>Action Phase</button>
-{/if}
+
 
 <style>
 
+	.faction-list {
+		margin: 0;
+		width: 800px;
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		-ms-transform: translate(-50%, -50%);
+		transform: translate(-50%, -50%);
+	}
+
 	.faction-list * {
-		max-width: 800px;	
 		display: flex;
 		flex-direction: column;
 		margin: auto;
