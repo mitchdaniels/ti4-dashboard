@@ -40,8 +40,8 @@
 
 	:global(body) {
 		font-family: 'Urbanist', sans-serif;
-		background: hsl(0, 0%, 100%);
-		color:  hsl(0, 0%, 20%);
+		background: hsl(210, 20%, 98%);
+		color:  hsl(210, 20%, 20%);
 		text-align: center;
 	}
 	
@@ -62,26 +62,30 @@
 	}
 
 	:global(*:focus) {
-    outline: none;
+    	outline: none;
 	}
 
 	:global(button, .strategy, select) {
 		font-size:  16px;
+		font-weight: 500;
 		text-transform: uppercase;
 		letter-spacing: 0.15rem;
 	}
 
-	:global(button, select) {
+	:global(button, select, input[type="text"]) {
 		padding:  12px 24px;
 		border-radius:  8px;
-		background:  hsl(210, 40%, 20%);
-		color:  hsl(210, 40%, 95%);
 		border:  none;	
 		margin-right: 8px;
 	}
 
+	:global(select, input[type="text"]) {
+		background:  hsl(210, 20%, 90%);
+		color:  hsl(210, 20%, 20%);
+	}
+
 	:global(button:hover, select:hover) {
-		background: hsl(210, 40%, 30%);
+		/* background: hsl(210, 20%, 80%); */
 		cursor: pointer;
 	}
 

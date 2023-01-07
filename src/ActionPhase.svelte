@@ -79,11 +79,11 @@
 
 </script>
 
-<h1>{phase} Phase</h1>
-<h2>Round {round}</h2>
+<!-- <h1>{phase} Phase</h1>
+<h2>Round {round}</h2> -->
 <div class="faction-list">
 	{#each players as player, i (player.seat)}
-		<div class="animate" animate:flip={{ easing: quintInOut, duration: 1250 }} >
+		<div class="animate" animate:flip={{ easing: quintInOut, duration: 1000 }} >
 			<Card 
 				bind:player
 				{phase}
@@ -97,9 +97,10 @@
 	<button on:click={startActionPhase}>Action Phase</button>
 {/if}
 
-<style>	
+<style>
+
 	.faction-list * {
-		max-width: 800px;
+		max-width: 800px;	
 		display: flex;
 		flex-direction: column;
 		margin: auto;

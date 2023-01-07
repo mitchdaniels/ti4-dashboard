@@ -59,23 +59,13 @@
 		cursor:  pointer;
 	}
 
-	button {
-		font-size:  16px;
-		text-transform: uppercase;
-		letter-spacing: 0.15em;
-	}
-
-	button, input {
-		padding:  12px 24px;
-		border-radius:  8px;
-		background:  #3C4E59;
-		color:  #F7F9EE;
-		border:  none;
-		margin-right: 8px;
-	}
-
 	input::-webkit-calendar-picker-indicator {
 		opacity: 0;
+	}
+
+	button {
+		background:  hsl(210, 80%, 20%);
+		color:  hsl(210, 20%, 80%);
 	}
 
 </style>

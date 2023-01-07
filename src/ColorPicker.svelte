@@ -3,7 +3,15 @@
     export let color
 
     const colors = [
-        "#EB5757",  "#F2C94C", "#27AE60","#2D9CDB", "#BB6BD9", "#000000"
+        "hsl(0, 80%, 65%)", // red
+        "hsl(30, 80%, 65%)", // orange
+        "hsl(57, 90%, 60%)", // yellow
+        "hsl(130, 80%, 50%)", // green
+        "hsl(200, 80%, 60%)", // blue
+        "hsl(270, 80%, 65%)", // purple
+        "hsl(340, 100%, 75%)", // pink
+        "hsl(0, 0%, 0%)" // black
+
     ]
 
 </script>
@@ -21,7 +29,7 @@
 		width: 24px;
 		height: 24px;
 		border-radius: 12px;
-        background-color: gray;
+        background-color: hsl(0, 0%, 50%);
 	}
 
     .circle:hover {
