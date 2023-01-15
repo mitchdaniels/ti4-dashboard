@@ -14,6 +14,8 @@
 	const newRound = () => {
 		players.sort((a, b) => a.seat - b.seat)
 
+		arrayRotate(players, players.findIndex(player => player.speaker));
+
 		players.map(function(player) {
 			player.passed = false
 			player.strategicCompleted = false
@@ -22,6 +24,12 @@
 
 		phase = "Strategy"
 		++round
+	}
+
+	function arrayRotate(arr, count) {
+		const len = arr.length
+		arr.push(...arr.splice(0, (-count % len + len) % len))
+		return arr
 	}
 		
 	const advancePlayer = () => {

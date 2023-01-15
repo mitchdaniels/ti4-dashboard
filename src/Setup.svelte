@@ -1,10 +1,15 @@
 <script>
   	import ColorPicker from './ColorPicker.svelte';
-
-	import Button from './Button.svelte'
-	import { colors, factions } from './data.js'
+	import { factions } from './data.js'
 	
 	export let players, phase
+
+	function setSpeaker(i) {
+		players.map(player => player.speaker = false);
+		players[i].speaker = true;
+		players = players;
+		console.log(players[i].speaker);
+	}
 
 </script>
 
@@ -26,6 +31,7 @@
 			{#if i > 4}
 				<span class="material-icons close" on:click={() => {players.splice(i, 1), players = players;}}>close</span>
 			{/if}
+			<!-- <span class="material-icons" class:speaker={player.speaker} on:click={() => setSpeaker(i)}>star</span> -->
 		</div>
 	{/each}
 </div>
@@ -67,6 +73,19 @@
 		background:  hsl(210, 80%, 20%);
 		color:  hsl(210, 20%, 80%);
 	}
+/* 
+	.player-info .material-icons {
+		color: hsl(210 20% 90%);
+	}
+
+	.player-info .material-icons:hover {
+		color: hsl(210, 20%, 80%);
+		cursor: pointer;
+	}
+	
+	.player-info .speaker {
+		color: goldenrod;
+	} */
 
 </style>
 

@@ -28,7 +28,7 @@
 			{/if}
 			<div class="faction-name">{player.faction}</div>
 		  	{#if player.speaker}
-				<span class="material-icons" style="color: yellow">person</span>
+				<span class="material-icons speaker" style:color="yellow">person</span>
 			{/if}
 		</div>
 		{#if phase === "Action"}
@@ -103,6 +103,7 @@
 		z-index: 1;
 		box-shadow: var(--shadow-elevation-high);
 		border-radius: 0 0.5rem 0.5rem 0;
+		margin-bottom: 24px;
 	}
 
 	.active .faction-name {
@@ -146,6 +147,21 @@
 
 	button:hover {
 		background-color: hsl(210, 20%, 85%);
+	}
+
+	.strategy {
+		padding: 4px 16px;
+		border-radius: 16px;
+		background-color: hsl(210, 20%, 95%);
+		border: 1px solid hsl(210, 20%, 90%);
+	}
+
+	.speaker {
+		display: none;
+	}
+
+	.card:hover .speaker {
+		display: inline;
 	}
 
 </style>
